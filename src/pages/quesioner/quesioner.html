@@ -1,0 +1,548 @@
+<ion-header>
+        <ion-navbar color="primary">
+            <ion-title style="text-align:center;">
+                <ion-icon name="clipboard"></ion-icon> Quesioner
+            </ion-title>
+        </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list  radio-group>
+        <p>
+            Apakah anak anda mengalami demam?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio (click)="setDemam(1)" value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" (click)="setDemam(2)" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list  radio-group>
+        <p>
+            Sudah berapa lama?
+        </p>
+        <ion-item>
+          <ion-label>>=3 hari</ion-label>
+          <ion-radio [disabled]="notDemam" value="3"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=7 hari</ion-label>
+            <ion-radio [disabled]="notDemam" value="7"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=10 hari</ion-label>
+            <ion-radio [disabled]="notDemam" checked="true" value="10"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Berapa suhu badan saat demam berlangsung?
+        </p>
+        <ion-item>
+          <ion-label>>=37 &#8451;</ion-label>
+          <ion-radio [disabled]="notDemam" value="37"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=38 &#8451;</ion-label>
+            <ion-radio [disabled]="notDemam" value="38"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=39 &#8451;</ion-label>
+            <ion-radio [disabled]="notDemam" checked="true" value="39"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda pernah menderita malaria?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio (click)="setMalaria(1)" value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio (click)="setMalaria(2)" checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list  radio-group>
+        <p>
+            Kapan anak anda terkena malaria?
+        </p>
+        <ion-item>
+          <ion-label>Sebulan yang lalu</ion-label>
+          <ion-radio [disabled]="notMalaria" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=dua bulan lalu</ion-label>
+            <ion-radio [disabled]="notMalaria" value="2"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Setahun lalu</ion-label>
+            <ion-radio [disabled]="notMalaria" checked="true" value="12"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda pernah mengalami campak?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio (click)="setCampak(1)"value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio (click)="setCampak(2)" checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list  radio-group>
+        <p>
+            Kapan anak anda terkena campak?
+        </p>
+        <ion-item>
+          <ion-label>Sebulan yang lalu</ion-label>
+          <ion-radio [disabled]="notCampak" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=dua bulan lalu</ion-label>
+            <ion-radio [disabled]="notCampak" value="2"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Setahun lalu</ion-label>
+            <ion-radio [disabled]="notCampak" checked="true" value="12"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah demam anak mendadak tinggi dan terus menerus?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah tubuh anak anda terdapat ruam kemerahan?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah terdapat bintik-bintik merah pada tubuh anak?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah mengalami perdarahan pada gusi dan hidung?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah tubuh anak anda menggigil?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda mengalami muntah?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio (click)="setMuntah(1)" value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio (click)="setMuntah(2)" checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah muntah tersebut mengeluarkan darah/warna seperti kopi (hitam)?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio [disabled]="notMuntah" value="ya" ></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio [disabled]="notMuntah" value="tidak" checked="true"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah muntah tersebut sering?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya" [disabled]="notMuntah" (click)="setSeringMuntah(1)"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" [disabled]="notMuntah" (click)="setSeringMuntah(2)" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list  radio-group>
+        <p>
+            Berapa sering anak anda muntah?
+        </p>
+        <ion-item>
+          <ion-label>Sebulan yang lalu</ion-label>
+          <ion-radio [disabled]="notSeringMuntah || notMuntah" value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>=dua bulan lalu</ion-label>
+            <ion-radio [disabled]="notSeringMuntah || notMuntah" value="2"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Setahun lalu</ion-label>
+            <ion-radio [disabled]="notSeringMuntah || notMuntah" checked="true" value="12"></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group> 
+        <p>
+            Apakah anak anda mengalami diare?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya" (click)="setDiare(1)"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" (click)="setDiare(2)" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Sudah berapa lama diare?
+        </p>
+        <ion-item>
+          <ion-label>Hanya sehari</ion-label>
+          <ion-radio value="1" [disabled]="notDiare"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>= 2 hari</ion-label>
+            <ion-radio checked="true" [disabled]="notDiare" value="2"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group> 
+        <p>
+            Apakah anak anda mengalami sembelit?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya" (click)="setSembelit(1)"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" (click)="setSembelit(2)" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah tinja berwarna hitam pekat/berdarah?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya" [disabled]="notSembelit"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" [disabled]="notSembelit" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Sudah berapa lama sembelit?
+        </p>
+        <ion-item>
+          <ion-label>Hanya sehari</ion-label>
+          <ion-radio value="1" [disabled]="notSembelit"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>>= 2 hari</ion-label>
+            <ion-radio checked="true" [disabled]="notSembelit" value="2"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group> 
+        <p>
+            Apakah anak anda rewel/menangis terus menerus?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda tidak mau menyusu?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah jika tubuh anak dipegang, anak merasakan kesakitan?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah ada luka di mulut anak anda? (berbentuk cekungan dalam)
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah ada nanah yang keluar dari mata anak anda? (berair nanah)
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah ada kekeruhan pada kornea matanya?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>    
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda mengalami kembung terus menerus?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list> 
+    <ion-list radio-group>
+        <p>
+            Apakah terdapat benjolan di belakang telinga?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda bernapas dengan cepat?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio (click)="setNapasCepat(1)" value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio (click)="setNapasCepat(2)" checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Seberapa cepat napas anak anda?
+        </p>
+        <ion-item>
+          <ion-label>>= 40x/menit</ion-label>
+          <ion-radio [disabled]="notNapasCepat" value="40" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>>= 50x/menit</ion-label>
+          <ion-radio [disabled]="notNapasCepat" value="50" checked="true"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>>= 60x/menit</ion-label>
+          <ion-radio [disabled]="notNapasCepat" value="60" ></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah saat menarik napas mengalami cekungan pada rongga dada anak anda?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list> 
+    <ion-list radio-group>
+        <p>
+            Apakah napasnya berbunyi?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list> 
+    <ion-list radio-group>
+        <p>
+            Apakah terdapat cairan hidung yang berbau pada anak anda?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda mengalami kejang-kejang?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list> 
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda batuk kering?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list> 
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda batuk berdahak?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya" (click)="setBerdahak(1)"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" (click)="setBerdahak(2)" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Seberapa cepat napas anak anda?
+        </p>
+        <ion-item>
+          <ion-label>Kuning</ion-label>
+          <ion-radio [disabled]="notBerdahak" value="kuning" ></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Hijau</ion-label>
+          <ion-radio [disabled]="notBerdahak" value="hijau" checked="true"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Darah</ion-label>
+          <ion-radio [disabled]="notBerdahak" value="darah" ></ion-radio>
+        </ion-item>
+    </ion-list>
+    <ion-list radio-group>
+        <p>
+            Apakah anak anda selalu menunduk hingga dagu menempel ke dada?
+        </p>
+        <ion-item>
+          <ion-label>Ya</ion-label>
+          <ion-radio value="ya"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Tidak</ion-label>
+            <ion-radio checked="true" value="tidak"></ion-radio>
+          </ion-item>
+    </ion-list>
+    <div style="text-align:center;">
+        <button ion-button round class="center">Submit</button>
+    </div>
+</ion-content>

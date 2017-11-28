@@ -1,0 +1,17 @@
+[
+   {
+    "title": "Slide 1",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet arcu vitae elit malesuada ultricies. Mauris imperdiet eget libero at congue. Integer ornare dictum faucibus. Nunc id libero eu elit ullamcorper pulvinar vitae vel odio.",
+    "image": "assets/imgs/logo.png"
+  },
+  {
+    "title": "Slide 2",
+    "description":"Praesent feugiat, tortor ac tempor congue, ligula neque venenatis magna, ac mattis ante velit bibendum felis. Nunc sodales nisi mauris, eget dictum lorem porttitor at.",
+    "image": "assets/imgs/logo.png"
+  },
+  {
+    "title": "Slide 3",
+    "description":"Donec ac hendrerit lectus. Fusce quis auctor mauris. Morbi eu metus porttitor, semper nibh a, sagittis libero.",
+    "image": "assets/imgs/logo.png"
+  }
+]

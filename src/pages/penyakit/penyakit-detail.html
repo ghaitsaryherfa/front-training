@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{ item.nama_penyakit }}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Penanganan:</h2>
+  <p [innerHTML]="item.penanganan"></p>
+</ion-content>
