@@ -8,6 +8,10 @@ import { PenyakitPage } from '../pages/penyakit/penyakit';
 import { PenyakitDetailsPage } from "../pages/penyakit/penyakit-detail";
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HasilPage } from "../pages/quesioner/hasil";
+
+import { QuesionerService } from "../services/quesioner.service";
+import { UrlService } from "../services/url.service";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,7 +25,8 @@ import { HttpModule } from '@angular/http';
     PenyakitPage,
     PenyakitDetailsPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    HasilPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -34,11 +39,14 @@ import { HttpModule } from '@angular/http';
     PenyakitPage,
     PenyakitDetailsPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    HasilPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    QuesionerService,
+    UrlService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

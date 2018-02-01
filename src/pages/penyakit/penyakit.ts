@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { NavController, NavParams, ActionSheetController } from 'ionic-angular';
+import { Http, Headers, RequestOptionsArgs } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { PenyakitDetailsPage } from "./penyakit-detail";
 
@@ -11,13 +11,15 @@ import { PenyakitDetailsPage } from "./penyakit-detail";
 export class PenyakitPage {
   penyakit;
   penyakitTemp;
+  
 
-  constructor(public navCtrl: NavController, private http: Http, public navParams: NavParams) {
+  constructor(public actionsheetCtrl: ActionSheetController, public navCtrl: NavController, private http: Http, public navParams: NavParams) {
+    
     this.getDataPenyakit();
   }
   getDataPenyakit(){
-    this.http.get("https://rumaji.azurewebsites.net/skripsi-getsa/api/penyakit/all")
-    // this.http.get("assets/jsonfile/penyakit.json")
+    //this.http.get("https://rumaji.azurewebsites.net/skripsi-getsa/api/penyakit/all")
+    this.http.get("assets/jsonfile/penyakit.json")
     .map(res => res.json())
     .subscribe(data => 
       {
@@ -41,5 +43,66 @@ export class PenyakitPage {
 
   openNavDetailsPage(item) {
     this.navCtrl.push(PenyakitDetailsPage, { item: item });
+  }
+  openMenu() {
+    let actionSheet = this.actionsheetCtrl.create({
+      title: 'About Us',
+      cssClass: 'action-sheets-basic-page',
+      buttons: [
+        {
+          text: 'Dibuat oleh',
+          // role: 'destructive',
+          // icon: 'person',
+          handler: () => {
+            // console.log('Delete clicked');
+          }
+        },
+        {
+          text: 'Ghaitsa Ryherfa',
+          icon: 'person',
+          handler: () => {
+            // console.log('Share clicked');
+          }
+        },
+        // {
+        //   text: 'Rizky Maulana',
+        //   icon: 'person',
+        //   handler: () => {
+        //     // console.log('Share clicked');
+        //   }
+        // },
+        // {
+        //   text: 'Sopyan Mulyana',
+        //   icon: 'person',
+        //   handler: () => {
+        //     // console.log('Share clicked');
+        //   }
+        // },
+        {
+          text: 'Didukung oleh',
+          // role: 'destructive',
+          // icon: 'person',
+          handler: () => {
+            // console.log('Delete clicked');
+          }
+        },
+        {
+          text: 'dr. H. Muhammad Amin',
+          icon: 'person',
+          handler: () => {
+            // console.log('Share clicked');
+          }
+        },
+        {
+          text: 'Back',
+          role: 'cancel', // will always sort to be on the bottom
+          icon: 'close',
+          handler: () => {
+            // console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    actionSheet.present();
   }
 }

@@ -1,17 +1,15 @@
 [
    {
-    "title": "Slide 1",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet arcu vitae elit malesuada ultricies. Mauris imperdiet eget libero at congue. Integer ornare dictum faucibus. Nunc id libero eu elit ullamcorper pulvinar vitae vel odio.",
+    "title": "ADPPB",
+    "description": "Aplikasi Diagnosa Penyakit pada Balita.",
     "image": "assets/imgs/logo.png"
   },
   {
-    "title": "Slide 2",
-    "description":"Praesent feugiat, tortor ac tempor congue, ligula neque venenatis magna, ac mattis ante velit bibendum felis. Nunc sodales nisi mauris, eget dictum lorem porttitor at.",
-    "image": "assets/imgs/logo.png"
+    "title": "Tentang Aplikasi",
+    "description":"Aplikasi Diagnosa Penyakit pada Balita ini digunakan untuk melihat prediksi diagnosa balita sebelum dilakukan penanganan oleh dokter dengan melakukan konsultasi.</br>Selain itu, aplikasi ini memberikan informasi berupa jenis penyakit beserta penanganan lebih dini. "
   },
   {
-    "title": "Slide 3",
-    "description":"Donec ac hendrerit lectus. Fusce quis auctor mauris. Morbi eu metus porttitor, semper nibh a, sagittis libero.",
-    "image": "assets/imgs/logo.png"
+    "title": "Bantuan",
+    "description":"Aplikasi ini digunakan oleh orang tua, saat anak mengalami gejala demam.<br>Pada aplikasi ini diawali dengan mengisi formulir pada halaman konsultasi kemudian akan memberikan hasil berupa prediksi diagnosa penyakit yang diderita.</br>Selain itu, pengguna dapat melihat informasi mengenai jenis penyakit beserta penangannya pada halaman informasi penyakit."
   }
 ]
